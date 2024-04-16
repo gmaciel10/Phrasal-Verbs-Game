@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de Phrasal Verbs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background: white;
+            margin: 20px;
+        }
+        h1.question {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        div.counter {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        div.options {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.correct {
+            background-color: #28a745;
+        }
+        button.incorrect {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="question" id="question">Phrasal Verbs - by Gui</h1>
+        <div class="options" id="options">
+            <!-- As opções serão geradas pelo JavaScript -->
+        </div>
+        <div class="counter">Acertos: <span id="acertos">0</span></div>
+        <div class="counter">Erros: <span id="erros">0</span></div>
+        <button id="startButton" onclick="iniciarJogo()">Iniciar Jogo</button>
+        <button id="restartButton" style="display: none;" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
