@@ -3,79 +3,80 @@
 
 ![game_pv](https://github.com/user-attachments/assets/85092b61-3acd-40b9-ab75-2f471c976148)
 
+---
 
-```markdown
-# Jogo de Phrasal Verbs
+## Jogo de Phrasal Verbs
 
-Bem-vindo ao projeto do Jogo de Phrasal Verbs! Este jogo educativo ajuda a praticar e aprender phrasal verbs de forma interativa e divertida.
+Bem-vindo ao **Jogo de Phrasal Verbs**! Este é um jogo educativo projetado para ajudar estudantes e entusiastas da língua inglesa a praticar e aprender phrasal verbs de maneira interativa e envolvente. Desenvolvido com HTML, CSS e JavaScript, o jogo combina uma interface amigável com uma mecânica de jogo estimulante, proporcionando uma experiência de aprendizado eficaz.
 
-## Funcionalidades
+### O que é um Phrasal Verb?
 
-- **Iniciar Jogo**: Começa o jogo e exibe a primeira pergunta.
-- **Continuar**: Avança para a próxima pergunta após selecionar todas as respostas corretas.
-- **Resetar Jogo**: Reinicia o jogo mantendo a mesma sessão.
-- **Reiniciar Aplicação**: Limpa todo o progresso e reinicia o jogo desde o início.
+Phrasal verbs são combinações de verbos com preposições ou advérbios que criam um novo significado. Por exemplo, "give up" (desistir) ou "look after" (cuidar de). São uma parte essencial do inglês falado e escrito, e entender como usá-los corretamente pode melhorar significativamente sua fluência.
 
-## Importância de Rodar o Projeto em um Servidor Local
+### Recursos Principais
 
-Para garantir o funcionamento adequado do projeto, especialmente no carregamento do arquivo JSON e execução do código JavaScript, é crucial rodar o projeto em um servidor local. Abrir diretamente o arquivo HTML no navegador pode causar problemas devido às restrições de segurança.
+- **Jogabilidade Interativa:** Responda perguntas sobre phrasal verbs e seus significados com base em opções fornecidas.
+- **Sistema de Pontuação:** Acompanhe seus acertos e erros enquanto joga.
+- **Progresso Salvo:** O jogo salva seu progresso usando `sessionStorage`, permitindo que você continue de onde parou.
+- **Botões de Controle:** Inclui botões para iniciar o jogo, continuar a partir da última pergunta, e reiniciar o jogo ou a aplicação conforme necessário.
 
-### Como Rodar o Projeto em um Servidor Local
+### Como Jogar
 
-#### Usando Live Server no VS Code
+1. **Responder Perguntas:** Selecione os significados corretos para os phrasal verbs apresentados.
+2. **Continuar ou Reiniciar:** Use os botões "Continuar" para prosseguir para a próxima pergunta ou "Reiniciar Jogo" para começar novamente. O botão "Reiniciar Aplicação" redefine todo o progresso.
 
-1. **Instale o Live Server:**
-   - Abra o VS Code.
-   - Acesse a seção de extensões (ícone de quadrado na barra lateral esquerda).
-   - Procure por "Live Server" e instale a extensão desenvolvida por Ritwick Dey.
+### Configuração do Ambiente
 
-2. **Inicie o Live Server:**
-   - Abra o projeto no VS Code.
-   - Clique com o botão direito no arquivo `index.html` e selecione "Open with Live Server" ou use o atalho `Alt+L, Alt+O`.
+#### Executando com um Servidor Local
 
-3. **Acesse o Projeto:**
-   - O projeto será aberto automaticamente no seu navegador padrão.
+Para garantir que o jogo funcione corretamente, especialmente ao lidar com arquivos JavaScript e JSON, é essencial executar o projeto em um servidor local. Aqui estão algumas maneiras de configurar um servidor local:
 
-#### Usando Python
+##### Usando Python (versão 3.x):
 
-Se você tem Python instalado, pode iniciar um servidor local com o seguinte comando:
+```bash
+# Navegue até o diretório do projeto
+cd caminho/para/seu/projeto
 
-- **Para Python 3.x:**
+# Execute o servidor local
+python -m http.server
+```
 
-  ```bash
-  python -m http.server 8000
-  ```
+##### Usando Python (versão 2.x):
 
-- **Para Python 2.x:**
+```bash
+# Navegue até o diretório do projeto
+cd caminho/para/seu/projeto
 
-  ```bash
-  python -m SimpleHTTPServer 8000
-  ```
+# Execute o servidor local
+python -m SimpleHTTPServer
+```
 
-   Depois, abra seu navegador e vá para `http://localhost:8000`.
+##### Usando Node.js com `http-server`:
 
-#### Usando Node.js com http-server
+```bash
+# Instale http-server globalmente se ainda não tiver
+npm install -g http-server
 
-1. **Instale http-server:**
-   - Abra um terminal e execute:
+# Navegue até o diretório do projeto
+cd caminho/para/seu/projeto
 
-     ```bash
-     npm install -g http-server
-     ```
+# Inicie o servidor local
+http-server
+```
 
-2. **Inicie o Servidor:**
-   - Navegue até o diretório do projeto e execute:
+### Observações
 
-     ```bash
-     http-server
-     ```
+- **Importância de um Servidor Local:** Muitos navegadores têm restrições sobre o acesso a arquivos locais, o que pode causar problemas ao tentar carregar arquivos JSON ou scripts JavaScript diretamente. Usar um servidor local evita esses problemas e garante que seu projeto funcione conforme o esperado.
+- **Compatibilidade:** O projeto foi testado em navegadores modernos e deve funcionar na maioria dos navegadores atuais.
 
-3. **Acesse o Projeto:**
-   - Abra seu navegador e vá para `http://localhost:8080`.
+### Contribuições
 
-## Estrutura do Projeto
+Contribuições são bem-vindas! Se você encontrar bugs ou tiver sugestões para melhorias, sinta-se à vontade para abrir um **issue** ou enviar um **pull request**.
 
-- **`index.html`**: Arquivo HTML principal com a estrutura e elementos da interface do jogo.
-- **`styles.css`**: Arquivo CSS que estiliza o jogo.
-- **`index.js`**: Arquivo JavaScript com a lógica do jogo e manipulação da interação com o usuário.
-- **`base.json`**: Arquivo JSON contendo os dados dos phrasal verbs.
+### Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+---
+
+Essa descrição fornece uma visão geral detalhada do projeto, instruções claras para configurar e executar o jogo, e informações adicionais sobre a importância de usar um servidor local.
