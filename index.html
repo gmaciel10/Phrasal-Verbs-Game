@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <title>Jogo de Phrasal Verbs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body, html {
+        body,
+        html {
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -15,8 +18,9 @@
             justify-content: center;
             text-align: center;
         }
+
         .container {
-            max-width: 600px;
+            max-width: 800px;
             width: 100%;
             padding: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -24,60 +28,126 @@
             background: white;
             margin: 20px;
         }
+
         h1.question {
             font-size: 1.5em;
             color: #333;
             margin-bottom: 20px;
         }
+
         div.counter {
             font-size: 1em;
             color: #555;
             margin-bottom: 5px;
         }
+
         div.options {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
         }
+
         button {
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
-            margin-bottom: 10px;
+            padding: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         button.correct {
             background-color: #28a745;
         }
+
         button.incorrect {
             background-color: #dc3545;
         }
+
+        .btn-group{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        button.continue-button {
+            background-color: #17a2b8;
+            display: none;
+            margin: 20px 0;
+            /* Alinha ao centro, alinhamento à direita pode ser feito usando a classe 'right' */
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button.reset-button {
+            background-color: #ffc107;
+            display: block;
+            /* Sempre visível */
+
+            padding: 10px 20px;
+            cursor: pointer;
+            color: black;
+        }
+
+        button.reset-button i,
+        button.continue-button i {
+            margin-right: 5px;
+        }
+
+        button.continue-button.right {
+            margin-left: auto;
+            /* Alinha à direita */
+            display: block;
+        }
+
         img.header-image {
-        
-            width: 100%; /* Ajuste conforme necessário */
+            width: 100%;
+            /* Ajuste conforme necessário */
             height: auto;
+            margin-bottom: 20px;
+        }
+
+        div.progress {
+            font-size: 1em;
+            color: #555;
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <img src="./A_vibrant_and_educational_header_image_for_a_phras.png" alt="Phrasal Verbs Game Header" class="header-image">
+
+        <img src="./A_vibrant_and_educational_header_image_for_a_phras.png" alt="Phrasal Verbs Game Header"
+            class="header-image">
         <h1 class="question" id="question">Pressione 'Iniciar Jogo' para começar!</h1>
+        <div class="progress" id="progress">Pergunta 1 de 0</div>
         <div class="options" id="options">
             <!-- As opções serão geradas pelo JavaScript -->
         </div>
         <div class="counter">Acertos: <span id="acertos">0</span></div>
         <div class="counter">Erros: <span id="erros">0</span></div>
         <button id="startButton" onclick="iniciarJogo()">Iniciar Jogo</button>
-        <button id="restartButton" style="display: none;" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+        <div class="btn-group">
+            <button id="restartAppButton" class="reset-button" onclick="reiniciarAplicacao()"><i
+                class="fas fa-redo"></i>Reiniciar Jogo</button>
+            <button id="continueButton" class="continue-button right" onclick="continuarJogo()"><i
+                    class="fas fa-arrow-right"></i>Continuar</button> 
+        </div>
+        <button id="resetButton" class="reset-button" onclick="resetarJogo()"><i class="fas fa-redo"></i>Resetar
+            Jogo</button>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>
